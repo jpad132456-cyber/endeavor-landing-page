@@ -146,8 +146,16 @@ async function novaPagina(browser, nav, vp, extra = {}) {
   const page = await context.newPage();
   return { context, page };
 }
+// O aviso inicial pede o horário do contador. As checagens usam o do dispositivo, que é o que
+// page.clock controla nos cenários do contador (R10). Depois do clique o mouse sai de cima da página,
+// senão ele fica sobre o botão do hero (em hover) e atrapalha as medições.
+async function fecharAviso(page) {
+  await page.locator('#aviso[open] button[value="dispositivo"]').click({ timeout: 5000 }).catch(() => {});
+  await page.mouse.move(0, 0).catch(() => {});
+}
 async function carregar(page, url = BASE) {
   const resp = await page.goto(url, { waitUntil: "load", timeout: 60000 });
+  await fecharAviso(page);
   await page.evaluate(() => document.fonts.ready.then(() => true)).catch(() => {});
   await page.waitForTimeout(1800); // animação de entrada do hero
   return resp;
@@ -488,6 +496,7 @@ async function rodarAxe(page, ctx) {
 // ---------------------------------------------------------------- teclado
 async function testarTeclado(page, ctx) {
   await page.goto(BASE, { waitUntil: "load" });
+  await fecharAviso(page);
   await page.waitForTimeout(1500);
   const passos = [];
   for (let i = 0; i < 80; i++) {
@@ -726,6 +735,7 @@ async function avaliarDesempenho(browser) {
     await cdp.send("Network.emulateNetworkConditions", { offline: false, ...perfil.rede });
     await cdp.send("Emulation.setCPUThrottlingRate", { rate: perfil.cpu });
     await page.goto(BASE, { waitUntil: "load", timeout: 120000 });
+    await fecharAviso(page);
     await page.waitForTimeout(3000);
     const p = await page.evaluate(() => ({ ...window.__perf }));
     await rolarTudo(page);
