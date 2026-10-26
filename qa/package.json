@@ -1,0 +1,17 @@
+{
+  "name": "endeavor-landing-qa",
+  "private": true,
+  "description": "Checagem de qualidade da landing page do Day1 Endeavor 2026 (resultados SIM/NÃO + prints)",
+  "type": "module",
+  "scripts": {
+    "setup": "npm install && npx playwright install chromium webkit firefox",
+    "check": "node checagem.mjs",
+    "check:rapido": "node checagem.mjs --rapido",
+    "check:producao": "node checagem.mjs --url https://endeavor-landing-page.vercel.app",
+    "testar-checagens": "node testar-checagens.mjs"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "4.13.0",
+    "playwright": "1.64.0"
+  }
+}

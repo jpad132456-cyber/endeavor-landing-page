@@ -126,3 +126,18 @@ cor ou fundo escuro.
 | `sala-sao-paulo-mapa-assentos.jpg` | Mapa de assentos (Plateia Central, Plateia Elevada, Camarote, Balcão Mezanino…). | 1200×1999 |
 
 Dica para grades de logos: os tamanhos variam muito, então normalize pela **altura**.
+
+---
+
+## Versões otimizadas (`web/`)
+
+Algumas pastas têm uma subpasta `web/` com cópias leves em **WebP** das imagens que a landing page
+usa (os originais continuam intactos). Geradas por `qa/otimizar-imagens.mjs` em 26/10/2026:
+
+- `1-palestrantes-hoje-2026/sem-fundo/web/`: os 6 cards, 424×568 (mesma resolução, 14–38 KB cada).
+- `2-palestrantes-edicoes-anteriores/web/palestrantes-05-dupla.webp`: 800×800.
+- `3-patrocinadores/web/` e `4-parceiros-e-apoiadores/web/`: logos reduzidos para caber em 320×128
+  (2× o maior tamanho exibido na página). Os SVGs não têm versão `web/`.
+- `5-evento-identidade-e-local/web/`: `day1-endeavor.webp` (720×235) e `sala-sao-paulo-01.webp` (1024×618).
+
+Para uma nova imagem da página, acrescente-a em `qa/otimizar-imagens.mjs` e rode o script.
