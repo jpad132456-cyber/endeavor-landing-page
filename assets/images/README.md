@@ -29,7 +29,8 @@ materiais ligados à Endeavor/Day1.
 ## 1. `1-palestrantes-hoje-2026/` — QUEM SOBE NO PALCO HOJE (26/10/2026)
 
 Confirmados na seção "Quem sobe no palco · 26.10" da página oficial. Cada arquivo é um card
-pronto: PNG 424×568 com **fundo transparente**. A foto é recortada numa forma arredondada, com um
+pronto: PNG 424×568 com **fundo branco opaco** (conferido pixel a pixel em 26/10/2026; não é
+transparente). A foto é recortada numa forma arredondada, com um
 **círculo teal** no canto inferior esquerdo e o **nome em caixa alta já escrito na imagem**. Por
 isso não é preciso colocar o nome por cima.
 
@@ -41,6 +42,12 @@ isso não é preciso colocar o nome por cima.
 | `daniela-e-juliana-binatti.png` | Daniela & Juliana Binatti (dupla) | Founders, Empreendedoras Endeavor | Pismo | A tecnologia brasileira que roda nos maiores bancos do mundo. |
 | `antonio-carlos-pipponzi.png` | Antônio Carlos Pipponzi | Empreendedor Endeavor | RD Saúde | Está na página oficial, mas **não aparece na lista do ingresso Fever**. Tema não informado. |
 | `bernardinho.png` | Bernardinho | **Convidado especial (não é founder)**: treinador de vôlei, bicampeão olímpico | — | O técnico que levou o vôlei do Brasil ao topo do mundo. |
+
+**Subpasta `sem-fundo/`:** os mesmos 6 cards, com os mesmos nomes de arquivo, mas com o fundo
+branco removido (transparente). Feitos a partir dos originais acima, removendo só o branco ligado
+às bordas da imagem; o branco de dentro das fotos foi mantido. Use estes quando o card ficar
+sobre cor ou fundo escuro. O nome no card é preto: mantenha essa parte do card sobre fundo claro.
+Hoje a seção de palestrantes da landing page usa estas versões.
 
 ## 2. `2-palestrantes-edicoes-anteriores/` — JÁ FORAM, NÃO VÃO HOJE
 

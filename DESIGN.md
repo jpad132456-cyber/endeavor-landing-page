@@ -248,7 +248,32 @@ WhatsApp.
   secundários usam o estilo de link sublinhado e nunca competem com ele.
 - No mobile, considere um botão fixo no rodapé da tela depois que o botão do hero sair da vista.
 
-### 2.2 Tokens iniciais
+### 2.2 Tipografia: apenas 3 tamanhos de fonte
+
+A página usa **somente 3 tamanhos de fonte**, para não ficar bagunçada. Essa regra vale mais que a
+escala do site da Endeavor (Parte 1, 1.4), que tem muitos tamanhos.
+
+| Token | Desktop | Mobile | Uso |
+|---|---|---|---|
+| `--fs-lg` | 50px | 32px | Títulos de seção, título do hero, números de destaque. |
+| `--fs-md` | 22px | 20px | Subtítulos, citações, botões, links CTA, nomes dos palestrantes. |
+| `--fs-sm` | 16px | 16px | Texto corrido, legendas, eyebrows, informações práticas, rodapé. |
+
+- Hierarquia extra vem de **peso** (400/500/700), **caixa alta**, **cor** e **espaçamento**,
+  nunca de um quarto tamanho.
+- As imagens com texto embutido (como os cards dos palestrantes) não contam como tamanho de fonte.
+
+**Exceção: números de destaque** (autorizada pelo usuário em 26/10/2026)
+
+| Token | Desktop | Mobile | Uso |
+|---|---|---|---|
+| `--fs-num` | 112px | 72px | Só números gigantes isolados, vazados (Object Sans/Unbounded), como o "100" dos ingressos. |
+
+- Vale **apenas para números** em destaque, no estilo do bloco de estatísticas do site da
+  Endeavor (1.6). Nunca para texto.
+- O contador regressivo continua em `--fs-lg`, porque precisa caber no círculo do hero.
+
+### 2.3 Tokens iniciais
 
 *(A preencher conforme o projeto avançar. Ponto de partida sugerido:)*
 
@@ -265,6 +290,12 @@ WhatsApp.
   --font-display: "Founders Grotesk", "Hanken Grotesk", "Inter", sans-serif;
   --font-body: "Inter", sans-serif;
   --font-numbers: "Object Sans", "Unbounded", sans-serif;
+
+  /* Apenas 3 tamanhos (ver 2.2); no mobile: lg 32px, md 20px */
+  --fs-lg: 50px;
+  --fs-md: 22px;
+  --fs-sm: 16px;
+  --fs-num: 112px; /* exceção só para números (ver 2.2); no mobile: 72px */
 
   --container: 1440px;
   --gutter: 35px;
