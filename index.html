@@ -1,0 +1,751 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Day1 Endeavor 2026 · Ingresso gratuito para estudantes</title>
+<meta name="description" content="Hoje, 26/10, às 17h, na Sala São Paulo: os founders da VTEX, Pismo, Insider e LiveMode e Bernardinho contam como foi o primeiro dia da jornada. 100 ingressos gratuitos para estudantes.">
+<meta property="og:title" content="Todo gigante teve um Day 1. Hoje, 17h, eles contam como foi o deles.">
+<meta property="og:description" content="Day1 Endeavor 2026 · Sala São Paulo · 100 ingressos gratuitos para estudantes.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&family=Inter:wght@400;500;600&family=Unbounded:wght@700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #01000F;
+    --white: #FFFFFF;
+    --teal: #09E1CD;
+    --blue: #273AE9;
+    --yellow: #FFCF53;
+    --purple: #AC27F4;
+    --teal-pale: #DCFBFA;
+    --gray-line: #CCCCCF;
+
+    --font-display: "Founders Grotesk", "Hanken Grotesk", "Inter", sans-serif;
+    --font-body: "Inter", sans-serif;
+    --font-numbers: "Object Sans", "Unbounded", sans-serif;
+
+    --container: 1440px;
+    --gutter: 35px;
+    --ease: 0.35s;
+
+    /* Apenas 3 tamanhos de fonte (DESIGN.md 2.2) */
+    --fs-lg: 50px;
+    --fs-md: 22px;
+    --fs-sm: 16px;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--white);
+    color: var(--ink);
+    font: 400 var(--fs-sm)/1.6 var(--font-body);
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+  img { display: block; max-width: 100%; height: auto; }
+  a { color: inherit; }
+  :focus-visible { outline: 3px solid var(--purple); outline-offset: 3px; }
+
+  .container {
+    max-width: var(--container);
+    margin: 0 auto;
+    padding: 0 var(--gutter);
+  }
+
+  /* ---------- Tipografia ---------- */
+  .eyebrow {
+    font: 600 var(--fs-sm)/1.2 var(--font-display);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin: 0 0 20px;
+  }
+  .kicker {
+    font: 500 var(--fs-md)/1.2 var(--font-display);
+    color: var(--blue);
+    margin: 0 0 14px;
+  }
+  h1, h2, h3 { font-family: var(--font-display); margin: 0; }
+  h1 {
+    font-size: var(--fs-lg);
+    line-height: 1.04;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: -0.01em;
+  }
+  h2 {
+    font-size: var(--fs-lg);
+    line-height: 1.08;
+    font-weight: 700;
+  }
+  h3 { font-size: var(--fs-md); line-height: 1.15; font-weight: 600; }
+  .lead {
+    font: 400 var(--fs-md)/1.4 var(--font-display);
+    max-width: 600px;
+    margin: 24px 0 0;
+  }
+  .lead strong { font-weight: 700; }
+
+  /* ---------- CTA ---------- */
+  .cta-block { margin-top: 36px; }
+  .btn {
+    display: inline-block;
+    background: var(--teal);
+    border: 2px solid var(--teal);
+    color: var(--ink);
+    font: 700 var(--fs-md)/1 var(--font-display);
+    padding: 20px 30px 21px;
+    text-decoration: none;
+    transition: background var(--ease), color var(--ease), border-color var(--ease);
+  }
+  .btn:hover { background: var(--ink); color: var(--teal); border-color: var(--ink); }
+  .on-dark .btn:hover, .on-blue .btn:hover { background: var(--white); color: var(--ink); border-color: var(--white); }
+  .cta-note {
+    font: 400 var(--fs-sm)/1.4 var(--font-body);
+    margin: 12px 0 0;
+    opacity: 0.75;
+  }
+  .text-link {
+    display: inline-block;
+    font: 500 var(--fs-md)/1.2 var(--font-display);
+    text-decoration: none;
+    padding-bottom: 5px;
+    position: relative;
+    transition: color var(--ease);
+  }
+  .text-link::after {
+    content: "";
+    position: absolute;
+    left: 0; right: 0; bottom: 0;
+    height: 2px;
+    background: var(--purple);
+    transition: height var(--ease);
+  }
+  .text-link:hover::after { height: 4px; }
+  .on-blue .text-link::after { background: var(--white); }
+  .secondary { margin: 22px 0 0; font: 400 var(--fs-sm)/1.5 var(--font-display); }
+  .secondary span { display: block; margin-bottom: 4px; }
+
+  /* ---------- Header ---------- */
+  .site-header {
+    position: relative;
+    z-index: 2;
+    padding: 28px 0;
+  }
+  .site-header .container { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+  .site-header .logo { width: 170px; }
+  .header-link { font: 500 var(--fs-sm)/1 var(--font-display); text-decoration: none; }
+  .header-link:hover { text-decoration: underline; text-decoration-color: var(--purple); text-underline-offset: 6px; }
+
+  /* ---------- Hero ---------- */
+  .hero { position: relative; overflow: hidden; padding-bottom: 110px; }
+  .hero::before {
+    /* diagonal teal, grafismo-assinatura da marca */
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 340px; height: 340px;
+    background: var(--teal);
+    clip-path: polygon(0 0, 100% 0, 0 100%);
+    z-index: 0;
+  }
+  .hero-grid {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+    gap: 40px;
+    align-items: center;
+    padding-top: 60px;
+  }
+  .hero-visual {
+    position: relative;
+    aspect-ratio: 1;
+    width: min(100%, 560px);
+    justify-self: end;
+    background: var(--ink);
+    border-radius: 50%;
+    color: var(--white);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 60px;
+  }
+  .hero-visual .day1-logo { width: 72%; max-width: 320px; }
+  .countdown { margin-top: 34px; }
+  .countdown-label {
+    font: 600 var(--fs-sm)/1.2 var(--font-display);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin: 0 0 10px;
+  }
+  .countdown-digits {
+    font: 700 var(--fs-lg)/1 var(--font-numbers);
+    color: transparent;
+    -webkit-text-stroke: 1.5px var(--white);
+    letter-spacing: 0.01em;
+    font-variant-numeric: tabular-nums;
+  }
+  .countdown-live {
+    font: 700 var(--fs-md)/1.2 var(--font-display);
+    color: var(--white);
+  }
+  .countdown-live a { color: var(--teal); }
+  .live-dot {
+    display: inline-block;
+    width: 12px; height: 12px;
+    border-radius: 50%;
+    background: var(--teal);
+    margin-right: 10px;
+    vertical-align: middle;
+    animation: pulse 1.4s ease-in-out infinite;
+  }
+  @keyframes pulse { 50% { opacity: 0.25; } }
+  .seal {
+    position: absolute;
+    right: -6px; bottom: 6px;
+    width: 128px; height: 128px;
+    border-radius: 50%;
+    background: var(--yellow);
+    color: var(--ink);
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    font: 800 var(--fs-sm)/1.05 var(--font-display);
+    text-transform: uppercase;
+    transform: rotate(-10deg);
+  }
+  .seal b { font: 700 var(--fs-md)/1.2 var(--font-numbers); }
+
+  /* ---------- Seções ---------- */
+  section { scroll-margin-top: 20px; }
+  .section { padding: 120px 0; }
+  .section-head { max-width: 760px; margin-bottom: 56px; }
+  .section-head p { margin: 18px 0 0; font: 400 var(--fs-md)/1.4 var(--font-display); }
+  .section-cta { margin-top: 64px; }
+
+  /* Palestrantes */
+  .speakers {
+    list-style: none;
+    margin: 0; padding: 0;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 64px 48px;
+  }
+  .speaker img { width: 100%; max-width: 340px; }
+  .speaker .company {
+    font: 600 var(--fs-sm)/1.2 var(--font-display);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--blue);
+    margin: 22px 0 8px;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .speaker .company::before {
+    content: "";
+    width: 12px; height: 12px;
+    border-radius: 50%;
+    background: var(--yellow);
+    flex: none;
+  }
+  .speaker p { margin: 8px 0 0; font: 400 var(--fs-sm)/1.5 var(--font-body); max-width: 340px; }
+
+  /* Como funciona (azul) */
+  .on-blue { background: var(--blue); color: var(--white); }
+  .on-blue .kicker { color: var(--teal); }
+  .free-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
+    gap: 80px;
+    align-items: start;
+  }
+  .big-number {
+    font: 700 var(--fs-lg)/1 var(--font-numbers);
+    color: transparent;
+    -webkit-text-stroke: 2px var(--white);
+    margin: 0;
+  }
+  .big-number-caption { font: 600 var(--fs-md)/1.35 var(--font-display); margin: 18px 0 0; max-width: 420px; }
+  .steps { list-style: none; margin: 0; padding: 0; counter-reset: step; }
+  .steps li {
+    counter-increment: step;
+    display: grid;
+    grid-template-columns: 64px 1fr;
+    gap: 24px;
+    padding: 28px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.35);
+  }
+  .steps li:last-child { border-bottom: 1px solid rgba(255, 255, 255, 0.35); }
+  .steps li::before {
+    content: counter(step);
+    width: 56px; height: 56px;
+    border-radius: 50%;
+    background: var(--yellow);
+    color: var(--ink);
+    display: flex; align-items: center; justify-content: center;
+    font: 700 var(--fs-md)/1 var(--font-numbers);
+  }
+  .steps h3 { margin-top: 4px; }
+  .steps p { margin: 6px 0 0; font: 400 var(--fs-sm)/1.6 var(--font-body); opacity: 0.9; }
+  .notice {
+    margin-top: 28px;
+    background: var(--teal-pale);
+    color: var(--ink);
+    padding: 18px 22px;
+    font: 400 var(--fs-sm)/1.5 var(--font-body);
+  }
+
+  .share {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 26px;
+    font: 500 var(--fs-md)/1 var(--font-display);
+    background: transparent;
+    color: inherit;
+    border: 2px solid currentColor;
+    padding: 14px 20px;
+    text-decoration: none;
+    transition: background var(--ease), color var(--ease);
+  }
+  .share:hover { background: var(--white); color: var(--ink); }
+  .share svg { width: 20px; height: 20px; flex: none; }
+
+  /* Informações práticas */
+  .info-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    border-top: 2px solid var(--ink);
+  }
+  .info-item { padding: 34px 32px 34px 0; }
+  .info-item + .info-item { padding-left: 32px; border-left: 1px solid var(--gray-line); }
+  .info-item .eyebrow { color: var(--blue); margin-bottom: 14px; }
+  .info-item .value { font: 700 var(--fs-md)/1.2 var(--font-display); margin: 0; }
+  .info-item p { margin: 10px 0 0; font: 400 var(--fs-sm)/1.5 var(--font-body); }
+  .info-item .text-link { margin-top: 16px; }
+  .info-item button.text-link {
+    background: none; border: 0; padding: 0 0 5px; cursor: pointer; color: inherit;
+  }
+  .venue {
+    margin-top: 56px;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 48px;
+    align-items: center;
+  }
+  .venue img {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border-radius: 50%;
+    max-width: 460px;
+  }
+
+  /* CTA final (ink) */
+  .on-dark { background: var(--ink); color: var(--white); position: relative; overflow: hidden; }
+  .final { padding: 140px 0; }
+  .final::after {
+    content: "";
+    position: absolute;
+    right: 0; bottom: 0;
+    width: 300px; height: 300px;
+    background: var(--teal);
+    clip-path: polygon(100% 0, 100% 100%, 0 100%);
+  }
+  .final h2 { font-size: var(--fs-lg); line-height: 1.04; max-width: 980px; text-transform: uppercase; font-weight: 800; }
+  .final .text-link::after { background: var(--teal); }
+  .final .secondary + .secondary { margin-top: 18px; }
+
+  .site-footer {
+    background: var(--ink);
+    color: var(--white);
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 48px 0 56px;
+  }
+  .site-footer .container { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 24px; }
+  .site-footer .logo { width: 150px; filter: brightness(0) invert(1); }
+  .site-footer p { margin: 0; font: 400 var(--fs-sm)/1.4 var(--font-body); opacity: 0.7; }
+  .site-footer .text-link { font-size: var(--fs-sm); }
+
+  /* Barra fixa no mobile */
+  .sticky-cta {
+    position: fixed;
+    left: 0; right: 0; bottom: 0;
+    z-index: 10;
+    background: var(--white);
+    border-top: 1px solid var(--gray-line);
+    padding: 12px 16px calc(12px + env(safe-area-inset-bottom));
+    transform: translateY(110%);
+    transition: transform var(--ease);
+    display: none;
+  }
+  .sticky-cta.is-visible { transform: translateY(0); }
+  .sticky-cta .btn { display: block; text-align: center; width: 100%; padding: 17px 20px 18px; }
+  .sticky-cta a.fever { display: block; text-align: center; margin-top: 8px; font: 500 var(--fs-sm)/1.2 var(--font-display); }
+
+  /* Entrada discreta das seções */
+  .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+  .reveal.is-seen { opacity: 1; transform: none; }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .reveal { opacity: 1; transform: none; transition: none; }
+    .live-dot { animation: none; }
+  }
+
+  /* ---------- Responsivo ---------- */
+  @media (min-width: 1280px) {
+    /* em telas largas o círculo sangra para a direita, como no hero do site da Endeavor */
+    .hero-visual { margin-right: calc(var(--gutter) * -1); }
+  }
+  @media (max-width: 1080px) {
+    .speakers { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .free-grid { grid-template-columns: 1fr; gap: 48px; }
+  }
+  @media (max-width: 860px) {
+    :root { --gutter: 20px; --fs-lg: 32px; --fs-md: 20px; }
+    .hero { padding-bottom: 70px; }
+    .hero::before { width: 180px; height: 180px; }
+    .hero-grid { grid-template-columns: 1fr; padding-top: 30px; }
+    .hero-visual {
+      justify-self: center;
+      margin-right: 0;
+      width: min(100%, 400px);
+      padding: 40px;
+    }
+    .seal { width: 104px; height: 104px; right: -4px; bottom: 0; }
+    .section { padding: 80px 0; }
+    .final { padding: 90px 0 140px; }
+    .final::after { width: 160px; height: 160px; }
+    .info-grid { grid-template-columns: 1fr; }
+    .info-item, .info-item + .info-item { padding: 28px 0; border-left: 0; }
+    .info-item + .info-item { border-top: 1px solid var(--gray-line); }
+    .venue { grid-template-columns: 1fr; }
+    .venue img { max-width: 320px; }
+    .sticky-cta { display: block; }
+    .site-footer { padding-bottom: 150px; }
+    .header-link { display: none; }
+    .site-header .logo { width: 140px; }
+  }
+  @media (max-width: 560px) {
+    .btn { display: block; text-align: center; }
+    .speakers { grid-template-columns: 1fr; gap: 56px; }
+    .speaker img { max-width: 300px; }
+    .steps li { grid-template-columns: 48px 1fr; gap: 16px; }
+    .steps li::before { width: 44px; height: 44px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <img class="logo" src="assets/images/5-evento-identidade-e-local/endeavor.svg" alt="Endeavor">
+    <a class="header-link" href="#como-funciona">Como funciona o ingresso gratuito</a>
+  </div>
+</header>
+
+<main>
+  <!-- 1. Hero -->
+  <section class="hero" id="topo">
+    <div class="container hero-grid">
+      <div>
+        <p class="eyebrow">Day1 Endeavor 2026 · Hoje, 26.10 · 17h · Sala São Paulo</p>
+        <h1>Todo gigante teve um Day 1. Hoje, 17h, eles contam como foi o deles.</h1>
+        <p class="lead">
+          Os founders da <strong>VTEX, Pismo, Insider e LiveMode</strong> e o <strong>Bernardinho</strong>
+          sobem ao palco da Sala São Paulo, para mais de 1000 pessoas, para contar as dúvidas,
+          os erros e as decisões que mudaram tudo. <strong>100 ingressos gratuitos para estudantes.</strong>
+        </p>
+        <div class="cta-block">
+          <a class="btn js-main-cta" id="hero-cta" href="https://forms.gle/UK5mzH7c9cRPeHNh6" target="_blank" rel="noopener">Quero meu ingresso gratuito</a>
+          <p class="cta-note">Só 100 vagas, liberadas por ordem de inscrição.</p>
+          <p class="secondary">
+            <span>Não é estudante ou as vagas esgotaram?</span>
+            <a class="text-link" href="https://feverup.com/m/712650" target="_blank" rel="noopener">Garanta seu ingresso na Fever</a>
+          </p>
+        </div>
+      </div>
+
+      <div class="hero-visual" aria-live="polite">
+        <img class="day1-logo" src="assets/images/5-evento-identidade-e-local/day1-endeavor.png" alt="Day1 Endeavor" width="1420" height="464">
+        <div class="countdown" id="countdown">
+          <p class="countdown-label">Começa em</p>
+          <div class="countdown-digits" id="countdown-digits">--:--:--</div>
+        </div>
+        <div class="seal" aria-hidden="true"><b>100</b>vagas<br>grátis</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. Quem sobe no palco -->
+  <section class="section" id="palestrantes">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="kicker">Quem sobe no palco · 26.10</p>
+        <h2>As histórias de quem já passou pelo primeiro dia e chegou lá.</h2>
+        <p>Nada de palestra motivacional genérica: são os próprios fundadores contando como tudo começou.</p>
+      </div>
+
+      <ul class="speakers">
+        <li class="speaker reveal">
+          <img src="assets/images/1-palestrantes-hoje-2026/mariano-gomide.png" alt="Mariano Gomide" width="424" height="568" loading="lazy">
+          <p class="company">VTEX</p>
+          <h3>A ambição de construir, a partir do Brasil, uma das maiores plataformas de e-commerce do mundo.</h3>
+        </li>
+        <li class="speaker reveal">
+          <img src="assets/images/1-palestrantes-hoje-2026/daniela-e-juliana-binatti.png" alt="Daniela e Juliana Binatti" width="424" height="568" loading="lazy">
+          <p class="company">Pismo</p>
+          <h3>A tecnologia brasileira que roda nos maiores bancos do mundo.</h3>
+        </li>
+        <li class="speaker reveal">
+          <img src="assets/images/1-palestrantes-hoje-2026/carol-matsuse-e-yuri-gricheno.png" alt="Carol Matsuse e Yuri Gricheno" width="424" height="568" loading="lazy">
+          <p class="company">Insider</p>
+          <h3>A construção da marca que vem transformando a moda e o conforto dos brasileiros.</h3>
+        </li>
+        <li class="speaker reveal">
+          <img src="assets/images/1-palestrantes-hoje-2026/sergio-lopes-e-edgar-diniz.png" alt="Sérgio Lopes e Edgar Diniz" width="424" height="568" loading="lazy">
+          <p class="company">LiveMode</p>
+          <h3>Como transmitir a Copa do Mundo para 100 milhões de brasileiros no YouTube.</h3>
+        </li>
+        <li class="speaker reveal">
+          <img src="assets/images/1-palestrantes-hoje-2026/bernardinho.png" alt="Bernardinho" width="424" height="568" loading="lazy">
+          <p class="company">Convidado especial</p>
+          <h3>O técnico que levou o vôlei do Brasil ao topo do mundo.</h3>
+          <p>Bicampeão olímpico como treinador.</p>
+        </li>
+        <li class="speaker reveal">
+          <img src="assets/images/1-palestrantes-hoje-2026/antonio-carlos-pipponzi.png" alt="Antônio Carlos Pipponzi" width="424" height="568" loading="lazy">
+          <p class="company">RD Saúde</p>
+          <h3>Empreendedor Endeavor.</h3>
+        </li>
+      </ul>
+
+      <div class="section-cta reveal">
+        <a class="btn" href="https://forms.gle/UK5mzH7c9cRPeHNh6" target="_blank" rel="noopener">Quero meu ingresso gratuito</a>
+        <p class="secondary">
+          <span>Não é estudante ou as vagas esgotaram?</span>
+          <a class="text-link" href="https://feverup.com/m/712650" target="_blank" rel="noopener">Garanta seu ingresso na Fever</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. Como funciona o ingresso gratuito -->
+  <section class="section on-blue" id="como-funciona">
+    <div class="container free-grid">
+      <div class="reveal">
+        <p class="kicker">Ingresso gratuito para estudantes</p>
+        <p class="big-number" aria-hidden="true">100</p>
+        <p class="big-number-caption">ingressos gratuitos para estudantes. Quando acabarem, acabou.</p>
+      </div>
+
+      <div class="reveal">
+        <h2>Como funciona</h2>
+        <ol class="steps" style="margin-top: 32px;">
+          <li>
+            <div>
+              <h3>Preencha o formulário</h3>
+              <p>Leva poucos minutos. É o mesmo botão em toda esta página.</p>
+            </div>
+          </li>
+          <li>
+            <div>
+              <h3>As vagas saem por ordem de inscrição</h3>
+              <p>São 100 ingressos, liberados até esgotarem. Quanto antes, melhor.</p>
+            </div>
+          </li>
+          <li>
+            <div>
+              <h3>A confirmação chega por e-mail</h3>
+              <p>Confira também a caixa de spam.</p>
+            </div>
+          </li>
+        </ol>
+        <p class="notice">O ingresso é <strong>pessoal e intransferível</strong>.</p>
+
+        <div class="cta-block">
+          <a class="btn" href="https://forms.gle/UK5mzH7c9cRPeHNh6" target="_blank" rel="noopener">Quero meu ingresso gratuito</a>
+          <p class="secondary">
+            <span>Não é estudante ou as vagas esgotaram?</span>
+            <a class="text-link" href="https://feverup.com/m/712650" target="_blank" rel="noopener">Garanta seu ingresso na Fever</a>
+          </p>
+          <a class="share js-share" href="#" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.4.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1 2.7c.1.2 1.8 2.8 4.4 3.9 1.6.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></svg>
+            Chamar um colega da faculdade
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. Informações práticas -->
+  <section class="section" id="informacoes">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="kicker">Informações práticas</p>
+        <h2>Hoje, às 17h, na Sala São Paulo.</h2>
+      </div>
+
+      <div class="info-grid reveal">
+        <div class="info-item">
+          <p class="eyebrow">Quando</p>
+          <p class="value">26.10 · 17h</p>
+          <p>Segunda-feira.</p>
+          <button type="button" class="text-link js-ics">Adicionar à agenda</button>
+        </div>
+        <div class="info-item">
+          <p class="eyebrow">Onde</p>
+          <p class="value">Sala São Paulo</p>
+          <p>Praça Júlio Prestes, 16 · São Paulo, SP</p>
+          <a class="text-link" href="https://www.google.com/maps/search/?api=1&query=Sala+S%C3%A3o+Paulo%2C+Pra%C3%A7a+J%C3%BAlio+Prestes+16%2C+S%C3%A3o+Paulo" target="_blank" rel="noopener">Abrir no mapa</a>
+        </div>
+        <div class="info-item">
+          <p class="eyebrow">Quem estará lá</p>
+          <p class="value">+1000 pessoas</p>
+          <p>Na plateia, ouvindo as histórias de primeiro dia de alguns dos maiores empreendedores do Brasil.</p>
+          <a class="text-link" href="assets/images/5-evento-identidade-e-local/sala-sao-paulo-mapa-assentos.jpg" target="_blank" rel="noopener">Ver mapa de assentos</a>
+        </div>
+      </div>
+
+      <div class="venue">
+        <img class="reveal" src="assets/images/5-evento-identidade-e-local/sala-sao-paulo-01.jpg" alt="Fachada da Sala São Paulo, com a torre do relógio" width="1024" height="618" loading="lazy">
+        <div class="reveal">
+          <a class="btn" href="https://forms.gle/UK5mzH7c9cRPeHNh6" target="_blank" rel="noopener">Quero meu ingresso gratuito</a>
+          <p class="secondary">
+            <span>Não é estudante ou as vagas esgotaram?</span>
+            <a class="text-link" href="https://feverup.com/m/712650" target="_blank" rel="noopener">Garanta seu ingresso na Fever</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. CTA final -->
+  <section class="final on-dark" id="final">
+    <div class="container reveal">
+      <p class="eyebrow" style="color: var(--teal);">Day1 Endeavor 2026</p>
+      <h2>Daqui a algumas horas, alguém vai sair da Sala São Paulo com uma ideia. Pode ser você.</h2>
+      <div class="cta-block">
+        <a class="btn js-main-cta" id="final-cta" href="https://forms.gle/UK5mzH7c9cRPeHNh6" target="_blank" rel="noopener">Quero meu ingresso gratuito</a>
+        <p class="secondary">
+          <span>Não é estudante ou as vagas esgotaram?</span>
+          <a class="text-link" href="https://feverup.com/m/712650" target="_blank" rel="noopener">Garanta seu ingresso na Fever</a>
+        </p>
+        <p class="secondary">
+          <span>Não dá para ir pessoalmente?</span>
+          <a class="text-link" href="https://endeavor.org.br/day1-2026/" target="_blank" rel="noopener">Assista online</a>
+        </p>
+        <a class="share js-share" href="#" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.4.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1 2.7c.1.2 1.8 2.8 4.4 3.9 1.6.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></svg>
+          Chamar um colega da faculdade
+        </a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <img class="logo" src="assets/images/5-evento-identidade-e-local/endeavor.svg" alt="Endeavor">
+    <p>Realização Endeavor Brasil · Day1 Endeavor 2026</p>
+    <a class="text-link" href="https://brasil.endeavor.org" target="_blank" rel="noopener">Conheça a Endeavor</a>
+  </div>
+</footer>
+
+<div class="sticky-cta" id="sticky-cta" aria-hidden="true">
+  <a class="btn" href="https://forms.gle/UK5mzH7c9cRPeHNh6" target="_blank" rel="noopener" tabindex="-1">Quero meu ingresso gratuito</a>
+  <a class="fever" href="https://feverup.com/m/712650" target="_blank" rel="noopener" tabindex="-1">Não é estudante? Ingresso na Fever</a>
+</div>
+
+<script>
+  // Horário de Brasília (UTC-3, sem horário de verão).
+  var EVENT_START = new Date("2026-10-26T17:00:00-03:00").getTime();
+  var EVENT_DAY_END = new Date("2026-10-26T23:59:59-03:00").getTime();
+  var FORM_URL = "https://forms.gle/UK5mzH7c9cRPeHNh6";
+  var ONLINE_URL = "https://endeavor.org.br/day1-2026/";
+
+  // Contador: antes das 17h conta o tempo; durante o dia do evento mostra "acontecendo agora";
+  // depois, aponta para a página oficial.
+  var countdown = document.getElementById("countdown");
+  var digits = document.getElementById("countdown-digits");
+  var timer;
+  function pad(n) { return String(n).padStart(2, "0"); }
+  function tick() {
+    var now = Date.now();
+    if (now < EVENT_START) {
+      var s = Math.floor((EVENT_START - now) / 1000);
+      var d = Math.floor(s / 86400);
+      var h = Math.floor((s % 86400) / 3600);
+      var m = Math.floor((s % 3600) / 60);
+      digits.textContent = (d > 0 ? d + "d " : "") + pad(h) + ":" + pad(m) + ":" + pad(s % 60);
+    } else if (now <= EVENT_DAY_END) {
+      countdown.innerHTML = '<p class="countdown-live"><span class="live-dot"></span>Acontecendo agora</p>' +
+        '<p class="countdown-label" style="margin-top:14px"><a href="' + ONLINE_URL + '" target="_blank" rel="noopener">Assista online</a></p>';
+      clearInterval(timer);
+    } else {
+      countdown.innerHTML = '<p class="countdown-live">O Day1 2026 aconteceu.</p>' +
+        '<p class="countdown-label" style="margin-top:14px"><a href="' + ONLINE_URL + '" target="_blank" rel="noopener">Veja na página oficial</a></p>';
+      clearInterval(timer);
+    }
+  }
+  tick();
+  timer = setInterval(tick, 1000);
+
+  // Compartilhar no WhatsApp: usa o endereço da página quando publicada; abrindo localmente, usa o form.
+  var shareUrl = /^https?:/.test(location.protocol) ? location.href.split("#")[0] : FORM_URL;
+  var shareText = "Bora no Day1 Endeavor hoje, 17h, na Sala São Paulo? Tem founders da VTEX, Pismo, Insider e LiveMode e o Bernardinho no palco. São só 100 ingressos gratuitos pra estudantes: " + shareUrl;
+  document.querySelectorAll(".js-share").forEach(function (a) {
+    a.href = "https://wa.me/?text=" + encodeURIComponent(shareText);
+  });
+
+  // Adicionar à agenda (.ics). O horário de término não foi divulgado, então o evento sai só com o início.
+  document.querySelector(".js-ics").addEventListener("click", function () {
+    var ics = [
+      "BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//Day1 Endeavor 2026//PT-BR",
+      "BEGIN:VEVENT",
+      "UID:day1-endeavor-2026@landing",
+      "DTSTAMP:20261026T000000Z",
+      "DTSTART:20261026T200000Z",
+      "SUMMARY:Day1 Endeavor 2026",
+      "LOCATION:Sala São Paulo\\, Praça Júlio Prestes\\, 16\\, São Paulo - SP",
+      "DESCRIPTION:Ingresso gratuito para estudantes: " + FORM_URL + "\\nAssista online: " + ONLINE_URL,
+      "END:VEVENT", "END:VCALENDAR"
+    ].join("\r\n");
+    var url = URL.createObjectURL(new Blob([ics], { type: "text/calendar;charset=utf-8" }));
+    var link = document.createElement("a");
+    link.href = url;
+    link.download = "day1-endeavor-2026.ics";
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
+    setTimeout(function () { URL.revokeObjectURL(url); }, 1000);
+  });
+
+  // Barra fixa no mobile: aparece quando nenhum CTA principal (hero ou final) está na tela.
+  var sticky = document.getElementById("sticky-cta");
+  var visibleCtas = new Set();
+  var ctaObserver = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) visibleCtas.add(e.target); else visibleCtas.delete(e.target);
+    });
+    var show = visibleCtas.size === 0;
+    sticky.classList.toggle("is-visible", show);
+    sticky.setAttribute("aria-hidden", show ? "false" : "true");
+    sticky.querySelectorAll("a").forEach(function (a) { a.tabIndex = show ? 0 : -1; });
+  });
+  document.querySelectorAll(".js-main-cta").forEach(function (el) { ctaObserver.observe(el); });
+
+  // Entrada discreta das seções.
+  var revealObserver = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) { e.target.classList.add("is-seen"); revealObserver.unobserve(e.target); }
+    });
+  }, { threshold: 0.15 });
+  document.querySelectorAll(".reveal").forEach(function (el) { revealObserver.observe(el); });
+</script>
+</body>
+</html>
