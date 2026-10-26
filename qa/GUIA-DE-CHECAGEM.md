@@ -128,17 +128,18 @@ Em cada tamanho e navegador, o script salva em `relatorio/prints/<navegador>/<ta
 | `04-palestrantes.jpg` | Quem sobe no palco + faixa de CTA. |
 | `05-como-funciona.jpg` | Seção azul do ingresso gratuito. |
 | `06-informacoes.jpg` | Quando, onde, quem estará lá e foto do local. |
-| `07-patrocinio.jpg` | Logos de patrocínio e apoio. |
-| `08-cta-final.jpg` | CTA final. |
-| `09-rodape.jpg` | Rodapé. |
-| `10-barra-fixa.jpg` | A tela no meio da rolagem, com a barra fixa (celular) ou o header fixo (desktop). |
-| `11-pagina-inteira.jpg` | A página inteira numa imagem só (bom para ver ritmo e espaçamento). |
+| `07-sobre.jpg` | Seção azul "Sobre a Endeavor": missão, números e CTA. |
+| `08-patrocinio.jpg` | Logos de patrocínio e apoio. |
+| `09-cta-final.jpg` | CTA final. |
+| `10-rodape.jpg` | Rodapé. |
+| `11-barra-fixa.jpg` | A tela no meio da rolagem, com a barra fixa (celular) ou o header fixo (desktop). |
+| `12-pagina-inteira.jpg` | A página inteira numa imagem só (bom para ver ritmo e espaçamento). |
 
 Prints de **estados especiais** ficam em `relatorio/prints/estados/`: o contador nos 4 momentos
 (2 dias antes, manhã do evento, durante, depois) e a primeira dobra sem JavaScript.
 
 Nos prints de seção, as barras fixas ficam escondidas para não cobrir o conteúdo. Elas aparecem
-no print `10-barra-fixa`. Animações infinitas (faixa rolante, selo girando) são congeladas no
+no print `11-barra-fixa`. Animações infinitas (faixa rolante, selo girando) são congeladas no
 início, para os prints saírem iguais de uma rodada para outra.
 
 **Como revisar a estética:** no relatório, aba **Comparar seção**, escolha uma seção e veja todos os

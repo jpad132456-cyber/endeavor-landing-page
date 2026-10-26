@@ -1,7 +1,7 @@
 // Gera versões leves (WebP) das imagens usadas na página, sem tocar nos originais.
 // Cada imagem é reduzida para caber na caixa indicada (2× o maior tamanho exibido, para
 // telas retina) e salva numa subpasta web/ ao lado do original.
-// Uso: node otimizar-imagens.mjs
+// Uso: node otimizar-imagens.mjs [trecho do nome do arquivo, para gerar só os que batem]
 import { chromium } from "playwright";
 import fs from "node:fs";
 import path from "node:path";
@@ -15,6 +15,7 @@ const TRABALHO = [
   ...["mariano-gomide", "daniela-e-juliana-binatti", "carol-matsuse-e-yuri-gricheno", "sergio-lopes-e-edgar-diniz", "bernardinho", "antonio-carlos-pipponzi"]
     .map((n) => ["1-palestrantes-hoje-2026/sem-fundo", `${n}.png`, 424, 568, 0.85]),
   ["2-palestrantes-edicoes-anteriores", "palestrantes-05-dupla.jpg", 800, 800, 0.8],
+  ["2-palestrantes-edicoes-anteriores", "palestrante-01.jpg", 800, 800, 0.8],
   ["5-evento-identidade-e-local", "sala-sao-paulo-01.jpg", 1024, 618, 0.8],
   ["5-evento-identidade-e-local", "day1-endeavor.png", 720, 236, 0.9],
   ...["dell-technologies", "onfly", "salvy", "ey", "qi-tech", "cora", "appmax", "tako", "wescale"].map((n) => ["3-patrocinadores", `${n}.png`, ...LOGO]),
@@ -26,6 +27,7 @@ const TRABALHO = [
 const browser = await chromium.launch();
 const page = await browser.newPage();
 for (const [pasta, arquivo, maxW, maxH, q] of TRABALHO) {
+  if (process.argv[2] && !arquivo.includes(process.argv[2])) continue;
   const origem = path.join(IMGS, pasta, arquivo);
   const tipo = arquivo.endsWith(".jpg") ? "image/jpeg" : "image/png";
   const dataUrl = `data:${tipo};base64,${fs.readFileSync(origem).toString("base64")}`;

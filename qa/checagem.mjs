@@ -91,11 +91,12 @@ const SECOES = [
   { id: "04-palestrantes", nome: "Quem sobe no palco", sel: "#palestrantes" },
   { id: "05-como-funciona", nome: "Como funciona (ingresso gratuito)", sel: "#como-funciona" },
   { id: "06-informacoes", nome: "Informações práticas", sel: "#informacoes" },
-  { id: "07-patrocinio", nome: "Patrocínio e apoio", sel: "#apoio" },
-  { id: "08-cta-final", nome: "CTA final", sel: "#final" },
-  { id: "09-rodape", nome: "Rodapé", sel: ".site-footer" },
-  { id: "10-barra-fixa", nome: "Barra fixa durante a rolagem", tipo: "barra" },
-  { id: "11-pagina-inteira", nome: "Página inteira", tipo: "inteira" },
+  { id: "07-sobre", nome: "Sobre a Endeavor", sel: "#sobre" },
+  { id: "08-patrocinio", nome: "Patrocínio e apoio", sel: "#apoio" },
+  { id: "09-cta-final", nome: "CTA final", sel: "#final" },
+  { id: "10-rodape", nome: "Rodapé", sel: ".site-footer" },
+  { id: "11-barra-fixa", nome: "Barra fixa durante a rolagem", tipo: "barra" },
+  { id: "12-pagina-inteira", nome: "Página inteira", tipo: "inteira" },
 ];
 
 // ---------------------------------------------------------------- resultados
@@ -311,7 +312,7 @@ async function avaliarViewport(browser, nav, vp, plano) {
 
   // ---- C15: botão de inscrição ao fim de cada seção
   const semCta = [];
-  for (const sel of ["#topo", "#palestrantes", "#como-funciona", "#informacoes", "#apoio", "#final"]) {
+  for (const sel of ["#topo", "#palestrantes", "#como-funciona", "#informacoes", "#sobre", "#apoio", "#final"]) {
     const y = await page.evaluate((sel) => { const s = document.querySelector(sel).getBoundingClientRect(); return Math.max(0, s.bottom + scrollY - innerHeight); }, sel);
     await rolarPara(page, y);
     await page.waitForTimeout(500);
@@ -331,8 +332,8 @@ async function avaliarViewport(browser, nav, vp, plano) {
   await rolarPara(page, yMeio); await page.waitForTimeout(500);
   const b1 = (await estadoBarras(page)).find((b) => b.id === qual);
   if (!SEM_PRINTS) {
-    await fotografar(page, "tela", `${pasta}/10-barra-fixa.jpg`);
-    prints.push({ navegador: nav, viewport: vp.id, secao: "10-barra-fixa", arquivo: `${pasta}/10-barra-fixa.jpg` });
+    await fotografar(page, "tela", `${pasta}/11-barra-fixa.jpg`);
+    prints.push({ navegador: nav, viewport: vp.id, secao: "11-barra-fixa", arquivo: `${pasta}/11-barra-fixa.jpg` });
   }
   await page.evaluate(() => document.getElementById("final-cta").scrollIntoView({ block: "center", behavior: "instant" }));
   await page.waitForTimeout(500);

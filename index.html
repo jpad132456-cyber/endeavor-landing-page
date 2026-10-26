@@ -741,9 +741,48 @@
     aspect-ratio: 1;
     object-fit: cover;
     border-radius: 50%;
-    /* recorte quadrado de uma foto de 618px de altura: até 300px fica nítido em tela retina */
-    max-width: 300px;
+    /* recorte quadrado de uma foto de 618px de altura: 440px é o maior tamanho que ainda não
+       amplia o arquivo além de ~1,4× em tela retina; centralizada na coluna */
+    max-width: 440px;
+    justify-self: center;
   }
+
+  /* Sobre a Endeavor (azul) */
+  /* texto à esquerda e foto circular à direita, espelhando a seção do ingresso gratuito */
+  .about-top {
+    display: grid;
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+    gap: 80px;
+    align-items: center;
+    margin-bottom: 56px;
+  }
+  .about-top .section-head { margin-bottom: 0; }
+  .about-photo { margin: 0; justify-self: center; }
+  .stats {
+    list-style: none;
+    margin: 0; padding: 0;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    border-top: 2px solid var(--white);
+  }
+  .stats li { padding: 34px 32px 34px 0; }
+  .stats li + li { padding-left: 32px; border-left: 1px solid rgb(255 255 255 / 0.35); }
+  .stat-number { font: 700 var(--fs-lg)/1 var(--font-numbers); margin: 0; }
+  .stats p + p { margin: 12px 0 0; font: 400 var(--fs-sm)/1.5 var(--font-body); }
+  .about-cta {
+    margin-top: 56px;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 48px;
+    align-items: center;
+  }
+  .about-cta-title { margin: 0; max-width: 480px; font: 600 var(--fs-md)/1.35 var(--font-display); }
+  .about-cta .cta-block { margin-top: 0; }
+  .about-cta .secondary + .secondary { margin-top: 18px; }
+  /* a seção de logos começa colada na anterior (linha cinza no topo); depois do azul ela precisa
+     do respiro normal, e a linha some porque a troca de fundo já separa as seções */
+  .on-blue + .logos { padding-top: 120px; }
+  .on-blue + .logos .container::before { display: none; }
 
   /* CTA final (ink) */
   .on-dark { background: var(--ink); color: var(--white); position: relative; overflow: hidden; }
@@ -943,6 +982,7 @@
     .free-grid { grid-template-columns: 1fr; gap: 48px; }
     /* empilhado, a coluna não fica vazia: a foto sairia só para empurrar o botão para baixo */
     .free-photo { display: none; }
+    .about-top { grid-template-columns: 1fr; }
     .edge-seal { width: 110px; height: 110px; top: -38px; }
   }
   @media (max-width: 860px) {
@@ -987,6 +1027,12 @@
     .info-item, .info-item + .info-item { padding: 28px 0; border-left: 0; }
     .info-item + .info-item { border-top: 1px solid var(--gray-line); }
     .venue { grid-template-columns: 1fr; }
+    .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .stats li, .stats li + li { padding: 28px 16px 28px 0; border-left: 0; }
+    .stats li:nth-child(even) { padding-left: 16px; border-left: 1px solid rgb(255 255 255 / 0.35); }
+    .stats li:nth-child(n+3) { border-top: 1px solid rgb(255 255 255 / 0.35); }
+    .about-cta { grid-template-columns: 1fr; gap: 32px; }
+    .on-blue + .logos { padding-top: 80px; }
     .sticky-cta { display: block; }
     .topbar { display: none; }
     section { scroll-margin-top: 20px; }
@@ -1076,6 +1122,7 @@
       <a href="#palestrantes">Palestrantes</a>
       <a href="#como-funciona">Como funciona</a>
       <a href="#informacoes">Quando e onde</a>
+      <a href="#sobre">Sobre a Endeavor</a>
       <a href="#apoio">Patrocínio</a>
     </nav>
   </div>
@@ -1296,7 +1343,45 @@
     </div>
   </section>
 
-  <!-- 5. Patrocínio e apoio -->
+  <!-- 5. Sobre a Endeavor (números do site oficial, brasil.endeavor.org) -->
+  <section class="section on-blue" id="sobre">
+    <div class="container">
+      <div class="about-top">
+      <div class="section-head reveal">
+        <p class="kicker">Sobre a Endeavor</p>
+        <h2>Uma rede de empreendedores que ajuda outros empreendedores a ir mais longe.</h2>
+        <p>A Endeavor é uma organização sem fins lucrativos que seleciona empreendedores entre milhares de candidatos e apoia o crescimento deles com mentoria, conexões e investimento. A missão no Brasil: colocar o país entre os principais ecossistemas de empreendedorismo do mundo. É ela quem realiza o Day1.</p>
+      </div>
+      <figure class="free-photo about-photo reveal" aria-hidden="true">
+        <img src="assets/images/2-palestrantes-edicoes-anteriores/web/palestrante-01.webp" alt="" width="800" height="800" loading="lazy">
+      </figure>
+      </div>
+
+      <ul class="stats reveal">
+        <li><p class="stat-number">26</p><p>anos de Endeavor no Brasil</p></li>
+        <li><p class="stat-number">+50</p><p>países com a rede Endeavor</p></li>
+        <li><p class="stat-number">+450</p><p>Empreendedores Endeavor no Brasil</p></li>
+        <li><p class="stat-number">+300</p><p>mentores na rede brasileira</p></li>
+      </ul>
+
+      <div class="about-cta reveal">
+        <p class="about-cta-title">O próximo Empreendedor Endeavor pode estar na plateia hoje.</p>
+        <div class="cta-block">
+          <a class="btn" href="https://forms.gle/UK5mzH7c9cRPeHNh6" target="_blank" rel="noopener">Quero meu ingresso gratuito <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+          <p class="secondary">
+            <span>Não é estudante ou as vagas esgotaram?</span>
+            <a class="text-link" href="https://feverup.com/m/712650" target="_blank" rel="noopener">Garanta seu ingresso na Fever <svg class="icon" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a>
+          </p>
+          <p class="secondary">
+            <span>Quer conhecer a Endeavor a fundo?</span>
+            <a class="text-link" href="https://brasil.endeavor.org" target="_blank" rel="noopener">Visite o site oficial <svg class="icon" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. Patrocínio e apoio -->
   <section class="section logos" id="apoio">
     <div class="container">
       <div class="section-head reveal">
