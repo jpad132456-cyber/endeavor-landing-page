@@ -58,8 +58,8 @@ export const CATALOGO = {
   C04: c("Importante", "Links que abrem outra aba têm rel=noopener?", "Todo target=_blank tem noopener ou noreferrer.", "Segurança"),
   C05: c("Crítico", "Cada link/botão funciona ao ser clicado?", "Clica de verdade em cada elemento clicável visível: links externos precisam abrir nova aba com o endereço certo, âncoras precisam rolar até a seção, \"Adicionar à agenda\" precisa baixar o arquivo. Destinos externos são simulados (o clique não carrega o site real).", "Básico"),
   C06: c("Crítico", "Os sites de destino respondem (sem erro 404/500)?", "Requisição GET (seguindo redirecionamentos) para cada endereço externo único da página. Se bloquear robôs, tenta de novo com um navegador real.", "Básico"),
-  C07: c("Importante", "\"Adicionar à agenda\" baixa um .ics válido com 26/10 às 17h (Brasília)?", "Arquivo baixado tem BEGIN/END:VCALENDAR, DTSTART:20261026T200000Z (17h BRT), título e local.", "Básico"),
-  C08: c("Importante", "\"Chamar um colega\" abre o WhatsApp com mensagem e link da página?", "href começa com https://wa.me/?text= e a mensagem cita Day1, 17h, Sala São Paulo e o endereço da página.", "Básico"),
+  C07: c("Importante", "\"Adicionar à agenda\" baixa um .ics válido com 26/10 às 18h (Brasília)?", "Arquivo baixado tem BEGIN/END:VCALENDAR, DTSTART:20261026T210000Z (18h BRT), título e local.", "Básico"),
+  C08: c("Importante", "\"Chamar um colega\" abre o WhatsApp com mensagem e link da página?", "href começa com https://wa.me/?text= e a mensagem cita Day1, 18h, Sala São Paulo e o endereço da página.", "Básico"),
   C09: c("Recomendação", "Botões e links mudam de aparência ao passar o mouse?", "Compara cor, fundo, borda, sublinhado e transformações antes e depois do hover (só desktop).", "DESIGN.md 1.6"),
   C10: c("Importante", "Todo alvo de clique tem pelo menos 24×24 px?", "Retângulo de cada link/botão visível.", "WCAG 2.2 (2.5.8, AA)"),
   C11: c("Recomendação", "Todo alvo de toque tem pelo menos 44×44 px?", "Retângulo de cada link/botão visível (só celular e tablet).", "Apple HIG / Material (44–48px)"),
@@ -69,7 +69,7 @@ export const CATALOGO = {
   C15: c("Crítico", "Ao chegar ao fim de cada seção, há um botão de inscrição visível na tela?", "Rola até o fim de cada seção e procura um link para o form inteiro na tela e não coberto (vale o botão da seção ou a barra fixa).", "DESIGN.md 2.1"),
 
   // 5. Conteúdo e regras do evento
-  R01: c("Crítico", "Data, hora e local corretos aparecem?", "O texto da página contém 26.10 (ou 26/10), 17h, Sala São Paulo e Praça Júlio Prestes, 16.", "CLAUDE.md / DESIGN.md 2.1"),
+  R01: c("Crítico", "Data, hora e local corretos aparecem?", "O texto da página contém 26.10 (ou 26/10), 18h, Sala São Paulo e Praça Júlio Prestes, 16.", "CLAUDE.md / DESIGN.md 2.1"),
   R02: c("Crítico", "A oferta \"100 ingressos gratuitos para estudantes\" aparece?", "Texto exato presente.", "DESIGN.md 2.1"),
   R03: c("Importante", "As regras do ingresso aparecem (ordem de inscrição, pessoal e intransferível, e-mail, spam)?", "Os 4 termos estão no texto.", "DESIGN.md 2.1"),
   R04: c("Crítico", "Todos os 6 palestrantes de 2026 aparecem, com foto e nome?", "As 6 fotos da pasta 1-palestrantes-hoje-2026 (em qualquer formato) estão na seção, cada uma com alt preenchido.", "assets/images/README.md"),
@@ -78,7 +78,7 @@ export const CATALOGO = {
   R07: c("Crítico", "Nenhum contador de vagas restantes ou prazo inventado?", "O texto não contém \"restam\", \"restantes\", \"últimas N vagas\", \"N vagas disponíveis\", \"prazo\" etc.", "DESIGN.md 2.1"),
   R08: c("Crítico", "Os 4 links obrigatórios estão na página?", "Há links para o form de estudantes, a Fever, a transmissão online e o site da Endeavor.", "CLAUDE.md / DESIGN.md 2.1"),
   R09: c("Importante", "Só o formulário de estudantes usa o botão de destaque?", "Todo .btn e todo link com fundo teal apontam para o form; Fever, transmissão e site da Endeavor nunca usam .btn.", "DESIGN.md 2.1"),
-  R10: c("Importante", "O contador mostra o estado certo em cada horário?", "Relógio simulado: 2 dias antes (48:00:00), 26/10 10h (07:00:00), 26/10 18h (\"Acontecendo agora\" + link online) e 27/10 (\"aconteceu\" + link).", "Script da página"),
+  R10: c("Importante", "O contador mostra o estado certo em cada horário?", "Relógio simulado: 2 dias antes (48:00:00), 26/10 10h (08:00:00), 26/10 19h (\"Acontecendo agora\" + link online) e 27/10 (\"aconteceu\" + link).", "Script da página"),
   R11: c("Crítico", "Os textos com \"Hoje\" estão corretos para a data atual?", "Se a página diz \"hoje\", a data atual em Brasília precisa ser 26/10/2026.", "Conteúdo"),
   R12: c("Importante", "Nenhum texto de rascunho ou erro de dado aparece?", "O texto visível não contém lorem, undefined, NaN, null, [object, {{; e o texto original (sem caixa alta do CSS) não contém TODO ou FIXME.", "Básico"),
 

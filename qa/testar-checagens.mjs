@@ -24,7 +24,7 @@ const comScriptNoFim = (html, js) => trocar(html, "</body>", `<script>${js}</scr
 
 const CASOS = [
   { id: "R12-todo", defeito: "Texto de rascunho \"TODO: revisar\" esquecido na página", espera: ["R12"], partes: "geral",
-    aplicar: (h) => trocar(h, "<h2>Hoje, às 17h, na Sala São Paulo.</h2>", "<h2>Hoje, às 17h, na Sala São Paulo.</h2><p>TODO: revisar este texto</p>") },
+    aplicar: (h) => trocar(h, "<h2>Hoje, às 18h, na Sala São Paulo.</h2>", "<h2>Hoje, às 18h, na Sala São Paulo.</h2><p>TODO: revisar este texto</p>") },
   { id: "L02-texto-por-cima", defeito: "Parágrafo posicionado por cima do título do hero", espera: ["L02"], vps: "1440x900",
     aplicar: (h) => trocar(h, '<h1>Todo gigante', '<p style="position:absolute;top:150px;left:60px;margin:0;font:700 22px sans-serif">Texto por cima do título</p><h1>Todo gigante') },
   { id: "L02-entrelinha", defeito: "Entrelinha do H1 apertada demais (letras de uma linha encostam na outra)", espera: ["L02"], vps: "390x844,1440x900",

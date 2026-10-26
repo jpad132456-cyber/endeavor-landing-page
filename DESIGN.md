@@ -225,7 +225,8 @@ WhatsApp.
 - O ingresso é **pessoal e intransferível**. A confirmação chega por e-mail (o form pede para
   conferir também o spam).
 - Quem não conseguir vaga presencial pode assistir **online**: https://endeavor.org.br/day1-2026/
-- Contexto do evento citado no form: Sala São Paulo, 26/10, 17h, **mais de 1000 pessoas na
+- Contexto do evento citado no form: Sala São Paulo, 26/10, 18h (o form dizia 17h; horário corrigido
+  pelo usuário em 26/10/2026), **mais de 1000 pessoas na
   plateia**. O Day1 reúne os maiores empreendedores do Brasil para contar como foi o primeiro dia
   da jornada de cada um: "as dúvidas, os erros e as decisões que mudaram tudo".
 - Use a escassez de verdade ("só 100 vagas"). **Nunca invente** contador de vagas restantes nem

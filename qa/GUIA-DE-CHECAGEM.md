@@ -224,8 +224,8 @@ Cada linha é uma pergunta de SIM/NÃO. "Como o script decide" diz exatamente o 
 | C04 | Links que abrem outra aba têm rel=noopener? | Importante | Todo target=_blank tem noopener ou noreferrer. | Segurança |
 | C05 | Cada link/botão funciona ao ser clicado? | Crítico | Clica de verdade em cada elemento clicável visível: links externos precisam abrir nova aba com o endereço certo, âncoras precisam rolar até a seção, "Adicionar à agenda" precisa baixar o arquivo. Destinos externos são simulados (o clique não carrega o site real). | Básico |
 | C06 | Os sites de destino respondem (sem erro 404/500)? | Crítico | Requisição GET (seguindo redirecionamentos) para cada endereço externo único da página. Se bloquear robôs, tenta de novo com um navegador real. | Básico |
-| C07 | "Adicionar à agenda" baixa um .ics válido com 26/10 às 17h (Brasília)? | Importante | Arquivo baixado tem BEGIN/END:VCALENDAR, DTSTART:20261026T200000Z (17h BRT), título e local. | Básico |
-| C08 | "Chamar um colega" abre o WhatsApp com mensagem e link da página? | Importante | href começa com https://wa.me/?text= e a mensagem cita Day1, 17h, Sala São Paulo e o endereço da página. | Básico |
+| C07 | "Adicionar à agenda" baixa um .ics válido com 26/10 às 18h (Brasília)? | Importante | Arquivo baixado tem BEGIN/END:VCALENDAR, DTSTART:20261026T210000Z (18h BRT), título e local. | Básico |
+| C08 | "Chamar um colega" abre o WhatsApp com mensagem e link da página? | Importante | href começa com https://wa.me/?text= e a mensagem cita Day1, 18h, Sala São Paulo e o endereço da página. | Básico |
 | C09 | Botões e links mudam de aparência ao passar o mouse? | Recomendação | Compara cor, fundo, borda, sublinhado e transformações antes e depois do hover (só desktop). | DESIGN.md 1.6 |
 | C10 | Todo alvo de clique tem pelo menos 24×24 px? | Importante | Retângulo de cada link/botão visível. | WCAG 2.2 (2.5.8, AA) |
 | C11 | Todo alvo de toque tem pelo menos 44×44 px? | Recomendação | Retângulo de cada link/botão visível (só celular e tablet). | Apple HIG / Material (44–48px) |
@@ -238,7 +238,7 @@ Cada linha é uma pergunta de SIM/NÃO. "Como o script decide" diz exatamente o 
 
 | ID | Pergunta (SIM/NÃO) | Prioridade | Como o script decide | Fonte da regra |
 |---|---|---|---|---|
-| R01 | Data, hora e local corretos aparecem? | Crítico | O texto da página contém 26.10 (ou 26/10), 17h, Sala São Paulo e Praça Júlio Prestes, 16. | CLAUDE.md / DESIGN.md 2.1 |
+| R01 | Data, hora e local corretos aparecem? | Crítico | O texto da página contém 26.10 (ou 26/10), 18h, Sala São Paulo e Praça Júlio Prestes, 16. | CLAUDE.md / DESIGN.md 2.1 |
 | R02 | A oferta "100 ingressos gratuitos para estudantes" aparece? | Crítico | Texto exato presente. | DESIGN.md 2.1 |
 | R03 | As regras do ingresso aparecem (ordem de inscrição, pessoal e intransferível, e-mail, spam)? | Importante | Os 4 termos estão no texto. | DESIGN.md 2.1 |
 | R04 | Todos os 6 palestrantes de 2026 aparecem, com foto e nome? | Crítico | As 6 fotos da pasta 1-palestrantes-hoje-2026 (em qualquer formato) estão na seção, cada uma com alt preenchido. | assets/images/README.md |
@@ -247,7 +247,7 @@ Cada linha é uma pergunta de SIM/NÃO. "Como o script decide" diz exatamente o 
 | R07 | Nenhum contador de vagas restantes ou prazo inventado? | Crítico | O texto não contém "restam", "restantes", "últimas N vagas", "N vagas disponíveis", "prazo" etc. | DESIGN.md 2.1 |
 | R08 | Os 4 links obrigatórios estão na página? | Crítico | Há links para o form de estudantes, a Fever, a transmissão online e o site da Endeavor. | CLAUDE.md / DESIGN.md 2.1 |
 | R09 | Só o formulário de estudantes usa o botão de destaque? | Importante | Todo .btn e todo link com fundo teal apontam para o form; Fever, transmissão e site da Endeavor nunca usam .btn. | DESIGN.md 2.1 |
-| R10 | O contador mostra o estado certo em cada horário? | Importante | Relógio simulado: 2 dias antes (48:00:00), 26/10 10h (07:00:00), 26/10 18h ("Acontecendo agora" + link online) e 27/10 ("aconteceu" + link). | Script da página |
+| R10 | O contador mostra o estado certo em cada horário? | Importante | Relógio simulado: 2 dias antes (48:00:00), 26/10 10h (08:00:00), 26/10 19h ("Acontecendo agora" + link online) e 27/10 ("aconteceu" + link). | Script da página |
 | R11 | Os textos com "Hoje" estão corretos para a data atual? | Crítico | Se a página diz "hoje", a data atual em Brasília precisa ser 26/10/2026. | Conteúdo |
 | R12 | Nenhum texto de rascunho ou erro de dado aparece? | Importante | O texto visível não contém lorem, undefined, NaN, null, [object, {{; e o texto original (sem caixa alta do CSS) não contém TODO ou FIXME. | Básico |
 

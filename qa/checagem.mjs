@@ -426,9 +426,9 @@ async function testarCliques(page, context, ctx, a, vp) {
         const [download] = await Promise.all([page.waitForEvent("download", { timeout: 8000 }), loc.click({ timeout: 5000 })]);
         const nome = download.suggestedFilename();
         const txt = fs.readFileSync(await download.path(), "utf8");
-        icsOk = /\.ics$/.test(nome) && /BEGIN:VCALENDAR/.test(txt) && /END:VCALENDAR/.test(txt) && /DTSTART:20261026T200000Z/.test(txt)
+        icsOk = /\.ics$/.test(nome) && /BEGIN:VCALENDAR/.test(txt) && /END:VCALENDAR/.test(txt) && /DTSTART:20261026T210000Z/.test(txt)
           && /SUMMARY:.*Day1/.test(txt) && /LOCATION:.*Sala São Paulo/.test(txt);
-        registrar("C07", ctx, icsOk, `Arquivo ${nome}; ${icsOk ? "início 26/10 20:00 UTC = 17h em Brasília" : "conteúdo inesperado: " + txt.slice(0, 200)}`);
+        registrar("C07", ctx, icsOk, `Arquivo ${nome}; ${icsOk ? "início 26/10 21:00 UTC = 18h em Brasília" : "conteúdo inesperado: " + txt.slice(0, 200)}`);
         linha.clique = true;
         linha.obs = `Baixou ${nome}`;
       } else if (c.target === "_blank") {
@@ -458,7 +458,7 @@ async function testarCliques(page, context, ctx, a, vp) {
   const share = a.cliques.find((c) => /wa\.me/.test(c.hrefAbs || ""));
   if (share) {
     const texto = new URL(share.hrefAbs).searchParams.get("text") || "";
-    const ok = share.hrefAbs.startsWith("https://wa.me/?text=") && /Day1/.test(texto) && /17h/.test(texto) && /Sala São Paulo/.test(texto) && texto.includes(semBarra(BASE));
+    const ok = share.hrefAbs.startsWith("https://wa.me/?text=") && /Day1/.test(texto) && /18h/.test(texto) && /Sala São Paulo/.test(texto) && texto.includes(semBarra(BASE));
     registrar("C08", ctx, ok, `Mensagem: "${texto}"`);
   } else registrar("C08", ctx, false, "Link de compartilhamento não encontrado");
 
@@ -558,7 +558,7 @@ async function avaliarGeral(browser) {
   // Conteúdo
   const t = g.texto;
   const falta = (termos) => termos.filter((x) => (Array.isArray(x) ? !x.some((y) => t.includes(y)) : !t.includes(x))).map((x) => (Array.isArray(x) ? x.join(" ou ") : x));
-  const f1 = falta([["26.10", "26/10"], "17h", "Sala São Paulo", "Praça Júlio Prestes, 16"]);
+  const f1 = falta([["26.10", "26/10"], "18h", "Sala São Paulo", "Praça Júlio Prestes, 16"]);
   registrar("R01", GERAL, f1.length === 0, f1.length ? `Falta: ${f1.join(", ")}` : "");
   registrar("R02", GERAL, /100 ingressos gratuitos para estudantes/i.test(t));
   const f3 = falta(["ordem de inscrição", "pessoal e intransferível", "e-mail", "spam"]);
@@ -648,9 +648,9 @@ async function avaliarGeral(browser) {
 // ---------------------------------------------------------------- relógio simulado (R10)
 async function avaliarContador(browser) {
   const cenarios = [
-    { nome: "2 dias antes", quando: "2026-10-24T17:00:00-03:00", ok: (e) => e.valores.join(":") === "48:00:00" },
-    { nome: "26/10 às 10h", quando: "2026-10-26T10:00:00-03:00", ok: (e) => e.valores.join(":") === "07:00:00" },
-    { nome: "26/10 às 18h", quando: "2026-10-26T18:00:00-03:00", ok: (e) => /Acontecendo agora/i.test(e.texto) && e.link === ONLINE_URL },
+    { nome: "2 dias antes", quando: "2026-10-24T18:00:00-03:00", ok: (e) => e.valores.join(":") === "48:00:00" },
+    { nome: "26/10 às 10h", quando: "2026-10-26T10:00:00-03:00", ok: (e) => e.valores.join(":") === "08:00:00" },
+    { nome: "26/10 às 19h", quando: "2026-10-26T19:00:00-03:00", ok: (e) => /Acontecendo agora/i.test(e.texto) && e.link === ONLINE_URL },
     { nome: "27/10", quando: "2026-10-27T09:00:00-03:00", ok: (e) => /aconteceu/i.test(e.texto) && e.link === ONLINE_URL },
   ];
   for (const vpId of ["390x844", "1440x900"]) {

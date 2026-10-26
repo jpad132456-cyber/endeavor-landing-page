@@ -4,7 +4,7 @@
 > quando ela for realmente necessária** (para conferir enquadramento, cor etc.). Imagens consomem
 > muito contexto.
 
-Evento: **Day1 Endeavor 2026** · 26/10/2026, 17h · Sala São Paulo (Praça Júlio Prestes, 16, SP).
+Evento: **Day1 Endeavor 2026** · 26/10/2026, 18h · Sala São Paulo (Praça Júlio Prestes, 16, SP).
 Coletado em 26/10/2026 de:
 - Ingresso Fever: https://feverup.com/m/712650
 - Página oficial: https://endeavor.org.br/day1-2026/
