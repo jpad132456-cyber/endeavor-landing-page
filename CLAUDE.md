@@ -10,6 +10,25 @@
   seções, nomes de arquivos, links e suposições sobre pedidos ambíguos.
 - Na dúvida se algo tem base explícita, trate como se não tivesse e reporte.
 
+## Git, GitHub e Vercel — commits e pushes só com autorização (obrigatória, sem exceções)
+
+- O projeto está no GitHub, em repositório **público**:
+  https://github.com/jpad132456-cyber/endeavor-landing-page (branch `main`).
+- O repositório está ligado ao Vercel (projeto `endeavor-landing-page`): **todo push na `main`
+  publica o site automaticamente** em https://endeavor-landing-page.vercel.app.
+- **Nunca faça `git commit` nem `git push` sem autorização expressa do usuário.** Antes de cada
+  um, pergunte no chat e espere um "sim" claro. Isso vale para os dois comandos, separadamente:
+  autorização para commit não autoriza push, e vice-versa.
+- A autorização vale **só para aquele commit/push específico**. Não vale para os próximos, mesmo
+  que sejam parecidos ou na mesma conversa. Autorização antiga ou genérica não conta.
+- Pedidos como "faça a página", "corrige isso" ou "deixe pronto" **não** autorizam commit nem
+  push. Só conta um pedido explícito para commitar ou para enviar.
+- O mesmo vale para qualquer coisa que grave no histórico ou publique: `git commit --amend`,
+  `git merge`, `git rebase`, `git tag`, `git push --force`, PRs e deploys pelo Vercel CLI
+  (`vercel deploy`, `vercel --prod`).
+- Ao pedir autorização, diga o que vai entrar (arquivos e mensagem do commit) e, no caso de
+  push, que ele publica o site.
+
 ## Objetivo e público
 
 - **Objetivo máximo:** convencer quem visita a ir ao **Day1 Endeavor 2026**. Tudo na página deve
