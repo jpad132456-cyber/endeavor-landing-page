@@ -542,6 +542,32 @@
     white-space: nowrap;
   }
   .big-number-caption { font: 600 var(--fs-md)/1.35 var(--font-display); margin: 18px 0 0; max-width: 420px; }
+  /* foto circular de uma edição anterior: preenche a coluna e abre do centro ao rolar */
+  .free-photo {
+    position: relative;
+    width: min(100%, 440px);
+    margin: 64px 0 0;
+  }
+  .free-photo::before {
+    content: "";
+    position: absolute;
+    inset: -14px -14px 14px 14px;
+    border: 2px solid var(--yellow);
+    border-radius: 50%;
+  }
+  .free-photo img {
+    position: relative;
+    display: block;
+    width: 100%; height: auto;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+  .js .free-photo.reveal { opacity: 1; transform: none; }
+  .js .free-photo img { clip-path: circle(0% at 50% 50%); transform: scale(1.15) rotate(-6deg); transition: clip-path 1s cubic-bezier(0.22, 1, 0.36, 1), transform 1.2s cubic-bezier(0.22, 1, 0.36, 1); }
+  .js .free-photo::before { opacity: 0; transform: rotate(-90deg); transition: opacity 0.6s ease 0.5s, transform 1s cubic-bezier(0.22, 1, 0.36, 1) 0.5s; }
+  .js .free-photo.is-seen img { clip-path: circle(50% at 50% 50%); transform: none; }
+  .js .free-photo.is-seen::before { opacity: 1; transform: none; }
   .steps-wrap { position: relative; margin-top: 32px; }
   /* linha que liga 1 → 2 → 3 e se preenche com a rolagem (posição e progresso vêm do JS) */
   .steps-line {
@@ -763,6 +789,7 @@
   @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
     .js .reveal { opacity: 1; transform: none; transition: none; }
+    .js .free-photo img, .js .free-photo::before { clip-path: none; opacity: 1; transform: none; transition: none; }
     .speaker img { transition: none; }
     .speaker:hover img { transform: none; }
     .live-dot, .seal-ring, .marquee-track, .js .hero::before, .final::before { animation: none; }
@@ -793,6 +820,8 @@
   @media (max-width: 1080px) {
     .speakers { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .free-grid { grid-template-columns: 1fr; gap: 48px; }
+    /* empilhado, a coluna não fica vazia: a foto sairia só para empurrar o botão para baixo */
+    .free-photo { display: none; }
     .edge-seal { width: 110px; height: 110px; top: -38px; }
     /* cascata em 2 colunas */
     .speakers .reveal:nth-child(n) { transition-delay: 0s; }
@@ -1029,6 +1058,9 @@
         <p class="kicker">Ingresso gratuito para estudantes</p>
         <p class="big-number"><span class="js-count-up" aria-hidden="true">100</span><span class="sr-only">100</span></p>
         <p class="big-number-caption">ingressos gratuitos para estudantes. Quando acabarem, acabou.</p>
+        <figure class="free-photo reveal" aria-hidden="true">
+          <img src="assets/images/2-palestrantes-edicoes-anteriores/palestrantes-05-dupla.jpg" alt="" width="800" height="800" loading="lazy">
+        </figure>
       </div>
 
       <div class="reveal">
