@@ -821,6 +821,8 @@
   .logo-grid .is-square { max-height: 60px; }
   .logo-grid--sm img { max-width: 130px; max-height: 32px; }
   .logo-grid--sm .is-square { max-height: 52px; }
+  /* último logo (Founders Club) ocupa a linha inteira para ficar centralizado */
+  .logo-grid--sm li:last-child { grid-column: 1 / -1; }
   /* logos que só existem em baixa resolução: exibidos com no máximo metade do tamanho do arquivo */
   .logo-grid .is-lowres { max-height: 28px; }
   .logo-grid .is-tiny { max-height: 16px; }
